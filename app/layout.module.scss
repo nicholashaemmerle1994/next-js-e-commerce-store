@@ -1,0 +1,26 @@
+.header {
+  nav {
+    background-color: #f1f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+
+    & a {
+      margin: 12px;
+      grid-column: 1fr;
+    }
+    & div {
+      margin-right: auto;
+      display: flex;
+      gap: 6px;
+    }
+  }
+}
+
+.footer {
+  background-color: #f1f0f0;
+  border-radius: 10px;
+  padding: 15px;
+  border-top: 2px solid white;
+  display: flex;
+}
