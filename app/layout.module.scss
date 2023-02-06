@@ -1,26 +1,32 @@
 .header {
-  nav {
-    background-color: #f1f0f0;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #fbeee0;
+  height: 100px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-bottom: solid 2px #422800;
 
+  img {
+    border-bottom: solid 2px #422800;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     & a {
-      margin: 12px;
-      grid-column: 1fr;
-    }
-    & div {
-      margin-right: auto;
-      display: flex;
-      gap: 6px;
+      color: #422800;
+      text-decoration: none;
+      text-align: center;
+      justify-content: center;
+      align-self: center;
     }
   }
 }
 
 .footer {
-  background-color: #f1f0f0;
+  background-color: #fbeee0;
   border-radius: 10px;
   padding: 15px;
-  border-top: 2px solid white;
-  display: flex;
+  display: grid;
 }

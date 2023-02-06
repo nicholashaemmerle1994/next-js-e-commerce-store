@@ -10,8 +10,10 @@ body {
   font-family: 'Dank Mono' SfMono-regular, Consolas, 'Liberation Mono', Menlo,
     'Couruer', monospace;
   font-size: 21px;
-  background-color: rgb(200, 189, 189);
+  background-color: #f6f6f8;
   color: var(--main-text-color);
   line-height: 1.5;
   margin: 0px;
+  // width: 100vw;
+  // height: 100vh;
 }

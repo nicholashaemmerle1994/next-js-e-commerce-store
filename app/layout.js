@@ -1,25 +1,25 @@
 import './global.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import CookieBanner from './cookieBanner';
 import styles from './layout.module.scss';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head />
 
       <body>
+        <CookieBanner />
         <header className={styles.header}>
+          <Link href="/">
+            <Image src="/Coffix.png" alt="Brandlogo" width={150} height={100} />
+          </Link>
           <nav>
-            <Image src="/Coffix.png" alt="Brandlogo" width={200} height={150} />
             <Link href="/">Home</Link>
             <Link href="/coffee">Coffee</Link>
             <Link href="/equipment">Equipment</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/checkout">Checkout</Link>
           </nav>
         </header>
         {children}
