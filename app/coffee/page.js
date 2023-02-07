@@ -22,12 +22,12 @@ export default async function CoffeePage() {
                   height={300}
                 />
               </Link>
-              <Link href={`/coffee/${coffee.siteName.id}`}>
+              <Link href={`/coffee/${coffee.id}`}>
                 <h3>{coffee.name}</h3>
               </Link>
-              <p>{coffee.shortDiscription}</p>
+              <p>{coffee.shortDescription}</p>
 
-              <p>{coffee.price}</p>
+              <p>{(coffee.price / 100).toFixed(2)} €</p>
             </div>
           );
         })}
