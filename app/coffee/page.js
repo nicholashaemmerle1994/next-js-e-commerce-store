@@ -1,11 +1,12 @@
+import { getAllProductsCoffee } from '@/database/products';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { getCoffeeProducts } from '../../database/coffee';
 import styles from './page.module.scss';
 
 export default async function CoffeePage() {
-  const coffeeProducts = await getCoffeeProducts();
+  const coffeeProducts = await getAllProductsCoffee();
+  console.log(coffeeProducts);
 
   return (
     <>

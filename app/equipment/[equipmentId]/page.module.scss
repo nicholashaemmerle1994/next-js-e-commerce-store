@@ -1,26 +1,28 @@
 .outterdiv {
-  display: grid;
-  grid-template-columns: 700px 500px;
-  margin-bottom: 150px;
-  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px 0px 110px 0px;
+
+  @media (max-width: 890px) {
+    flex-wrap: wrap;
+    .h1 {
+      text-align: center;
+    }
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
 }
 .innerdiv {
-  // background-color: #f6f6f8;
+  max-width: 550px;
   text-align: left;
-  background-color: #f6f6f8;
-  margin: 0px 40px;
-}
-.innerdiv2 {
-  // background-color: #f6f6f8;
-  text-align: left;
-  align-items: center;
-  justify-content: center;
   background-color: #f6f6f8;
   margin: 0px 40px;
 }
 .main {
   text-align: center;
-  justify-content: center;
 }
 
 .longDescription {
@@ -28,6 +30,7 @@
 }
 
 .button {
+  margin-top: 30px;
   background-color: #fbeee0;
   border: 2px solid #422800;
   border-radius: 30px;
@@ -52,12 +55,16 @@
   }
   @media (min-width: 768px) {
     .button {
-      min-width: 120px;
+      min-width: 10px;
       padding: 0 25px;
     }
   }
 }
 
-.img {
-  margin-top: 40px;
+.buttonDiv {
+  display: grid;
+  justify-content: left;
+  & button {
+    margin: 0 0 0 10px;
+  }
 }

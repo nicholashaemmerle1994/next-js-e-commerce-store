@@ -1,9 +1,7 @@
-import { getCoffeeProduct } from '@/database/coffee';
+import { getSingleProduct } from '@/database/products';
 import Coffee from './Coffee';
 
 export default async function CoffeeProductPage({ params }) {
-  const singleCoffee = await getCoffeeProduct(params.coffeeId);
-
-  console.log(singleCoffee.id);
+  const singleCoffee = await getSingleProduct(params.coffeeId);
   return <Coffee coffee={singleCoffee} />;
 }
