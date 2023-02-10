@@ -17,9 +17,11 @@ export default function RootLayout({ children }) {
           </Link>
           <nav>
             <Link href="/">Home</Link>
-            <Link href="/coffee">Coffee</Link>
+            <Link href="/coffee" data-test-id="products-link">
+              Coffee
+            </Link>
             <Link href="/equipment">Equipment</Link>
-            <Link href="/cart">Cart</Link>
+            <a href="/cart">Cart</a>
           </nav>
         </header>
         {children}

@@ -8,8 +8,13 @@ export const getAllProductsCoffee = cache(async () => {
 });
 
 export const getAllProductsEquipment = cache(async () => {
-  const coffees = await sql`SELECT * FROM products WHERE type = 'equipment'`;
-  return coffees;
+  const equipment = await sql`SELECT * FROM products WHERE type = 'equipment'`;
+  return equipment;
+});
+
+export const getAllProducts = cache(async () => {
+  const products = await sql`SELECT * FROM products`;
+  return products;
 });
 
 // Get single coffee

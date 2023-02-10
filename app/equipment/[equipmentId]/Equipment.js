@@ -10,6 +10,7 @@ export default function EquipmentPage(props) {
     // HAUPTSEITE
     <div className={styles.outterdiv}>
       <Image
+        data-test-id="product-image"
         src={props.equipment.img}
         alt={props.equipment.name}
         width={450}
@@ -20,10 +21,12 @@ export default function EquipmentPage(props) {
         <p className={styles.longDescription}>
           {props.equipment.longDescription}
         </p>
-        <p>Price: {(props.equipment.price / 100).toFixed(2)} €</p>
+        <p data-test-id="product-price">
+          Price: {(props.equipment.price / 100).toFixed(2)}
+        </p>
         <div className={styles.buttonDiv}>
           <div>
-            <input readOnly value={count} />
+            <input readOnly value={count} data-test-id="product-quantity" />
             {/* Minus Button */}
             <button
               onClick={() => {
@@ -48,6 +51,7 @@ export default function EquipmentPage(props) {
         </div>
         {/* Submit BUtton */}
         <button
+          data-test-id="product-add-to-cart"
           className={styles.button}
           onClick={() => {
             // get the cookie
@@ -60,6 +64,7 @@ export default function EquipmentPage(props) {
                 { id: props.equipment.id, amount: count },
               ]);
               // if there is no cookie function stop here
+              setCount(1);
               return;
             }
 

@@ -1,16 +1,59 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 import styles from './page.module.scss';
 
 export default function CoffeePage(props) {
+  // const [isUpdating, setIsUpdating] = useState(true);
   const [count, setCount] = useState(1);
+  const [isUpdated, setIsUpdated] = useState(true);
+  // useEffect(() => {
+  //   // get the cookie
+  //   console.log('use effect is running');
+  //   const productInCookies = getParsedCookie('cart');
+
+  //   // if there is no cookie we initialize the value with a count
+  //   if (!productInCookies) {
+  //     // create the cookie with a new object for the coffee
+  //     // setStringifiedCookie('cart', [
+  //     //   {
+  //     //     id: props.coffee.id,
+  //     //     amount: count,
+  //     //   },
+  //     // ]);
+  //     // if there is no cookie function stop here
+  //     return;
+  //   }
+
+  //   const foundCoffee = productInCookies.find((coffeeInCookie) => {
+  //     return coffeeInCookie.id === props.coffee.id;
+  //   });
+
+  //   // my coffee is inside of the cookie
+  //   if (foundCoffee) {
+  //     // update the amount of the foundcoffee
+  //     foundCoffee.amount += count;
+  //     // my coffee is not inside of the cookie
+  //   } else {
+  //     // Add a  coffee to the array of coffees in cookies
+  //     productInCookies.push({
+  //       id: props.coffee.id,
+  //       amount: count,
+  //     });
+  //   }
+
+  //   // Update the cookie after transformation
+  //   setStringifiedCookie('cart', productInCookies);
+  //   setCount(1);
+  // }, [isUpdated]);
+
   return (
     // HAUPTSEITE
 
     <div className={styles.outterdiv}>
       <Image
+        data-test-id="product-image"
         src={props.coffee.img}
         alt={props.coffee.name}
         width={450}
@@ -54,13 +97,19 @@ export default function CoffeePage(props) {
             // get the cookie
             const productInCookies = getParsedCookie('cart');
 
+            console.log(productInCookies);
+
             // if there is no cookie we initialize the value with a count
             if (!productInCookies) {
               // create the cookie with a new object for the coffee
               setStringifiedCookie('cart', [
-                { id: props.coffee.id, amount: count },
+                {
+                  id: props.coffee.id,
+                  amount: count,
+                },
               ]);
               // if there is no cookie function stop here
+              setCount(1);
               return;
             }
 
@@ -71,17 +120,20 @@ export default function CoffeePage(props) {
             // my coffee is inside of the cookie
             if (foundCoffee) {
               // update the amount of the foundcoffee
-              foundCoffee.amount = count;
-              console.log(foundCoffee);
+              foundCoffee.amount += count;
               // my coffee is not inside of the cookie
             } else {
               // Add a  coffee to the array of coffees in cookies
-              productInCookies.push({ id: props.coffee.id, amount: count });
+              productInCookies.push({
+                id: props.coffee.id,
+                amount: count,
+              });
             }
 
             // Update the cookie after transformation
             setStringifiedCookie('cart', productInCookies);
             setCount(1);
+            setIsUpdated(!isUpdated);
           }}
         >
           Add to your cart
