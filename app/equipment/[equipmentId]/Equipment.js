@@ -75,7 +75,7 @@ export default function EquipmentPage(props) {
             // my coffee is inside of the cookie
             if (foundCoffee) {
               // update the amount of the foundcoffee
-              foundCoffee.amount = count;
+              foundCoffee.amount += count;
               // my coffee is not inside of the cookie
             } else {
               // Add a  coffee to the array of coffees in cookies

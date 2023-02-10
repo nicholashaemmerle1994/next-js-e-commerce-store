@@ -8,46 +8,6 @@ export default function CoffeePage(props) {
   // const [isUpdating, setIsUpdating] = useState(true);
   const [count, setCount] = useState(1);
   const [isUpdated, setIsUpdated] = useState(true);
-  // useEffect(() => {
-  //   // get the cookie
-  //   console.log('use effect is running');
-  //   const productInCookies = getParsedCookie('cart');
-
-  //   // if there is no cookie we initialize the value with a count
-  //   if (!productInCookies) {
-  //     // create the cookie with a new object for the coffee
-  //     // setStringifiedCookie('cart', [
-  //     //   {
-  //     //     id: props.coffee.id,
-  //     //     amount: count,
-  //     //   },
-  //     // ]);
-  //     // if there is no cookie function stop here
-  //     return;
-  //   }
-
-  //   const foundCoffee = productInCookies.find((coffeeInCookie) => {
-  //     return coffeeInCookie.id === props.coffee.id;
-  //   });
-
-  //   // my coffee is inside of the cookie
-  //   if (foundCoffee) {
-  //     // update the amount of the foundcoffee
-  //     foundCoffee.amount += count;
-  //     // my coffee is not inside of the cookie
-  //   } else {
-  //     // Add a  coffee to the array of coffees in cookies
-  //     productInCookies.push({
-  //       id: props.coffee.id,
-  //       amount: count,
-  //     });
-  //   }
-
-  //   // Update the cookie after transformation
-  //   setStringifiedCookie('cart', productInCookies);
-  //   setCount(1);
-  // }, [isUpdated]);
-
   return (
     // HAUPTSEITE
 
@@ -114,9 +74,11 @@ export default function CoffeePage(props) {
             }
 
             const foundCoffee = productInCookies.find((coffeeInCookie) => {
+              console.log('props', typeof props.coffee.id);
+              console.log('coffee', typeof coffeeInCookie.id);
               return coffeeInCookie.id === props.coffee.id;
             });
-
+            console.log(foundCoffee);
             // my coffee is inside of the cookie
             if (foundCoffee) {
               // update the amount of the foundcoffee

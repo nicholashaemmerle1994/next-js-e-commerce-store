@@ -1,6 +1,13 @@
 import { getAllProducts } from '@/database/products';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
+// import styles from './page.module.scss';
+import styles from './page.module.scss';
+
+// export const metadata = {
+//   title: 'Cart',
+//   description: 'Here you find all your bikes',
+// };
 
 // const product = productInCookies[]
 
@@ -32,22 +39,33 @@ export default async function CheckoutPage() {
     return productWithAmount;
   });
   const cartItems = productsWithAmount.filter((obj) => obj.amount > 0);
-  console.log(cartItems);
 
   return (
-    <>
-      <div>Cart</div>
-      <div>
-        {cartItems.map((product) => {
-          return (
-            <div key={product.id}>
-              <div>
-                <Image src={product.img} width={200} height={200} />
+    <div className={styles.wholepage}>
+      <h1>Cart</h1>
+      {cartItems.map((product) => {
+        return (
+          <div key={product.id}>
+            <div className={styles.wholeProduct}>
+              <div className={styles.divImg}>
+                <p>{product.name}</p>
+                <Image
+                  src={product.img}
+                  width={200}
+                  height={200}
+                  alt={product.name}
+                />
+              </div>
+              <div className={styles.textDiv}>
+                <p className={styles.p}>Quantity: {product.amount}</p>
+                <p className={styles.p}>
+                  Price: {product.amount * product.price}
+                </p>
               </div>
             </div>
-          );
-        })}
-      </div>
-    </>
+          </div>
+        );
+      })}
+    </div>
   );
 }
