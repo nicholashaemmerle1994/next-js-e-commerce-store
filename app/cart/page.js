@@ -59,7 +59,7 @@ export default async function CheckoutPage() {
               <div className={styles.textDiv}>
                 <p className={styles.p}>Quantity: {product.amount}</p>
                 <p className={styles.p}>
-                  Price: {product.amount * product.price}
+                  Price: {((product.amount * product.price) / 100).toFixed(2)} €
                 </p>
               </div>
             </div>
