@@ -2,6 +2,7 @@ import { getAllProducts } from '@/database/products';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
+import DeleteButton from './DeleteButton';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -38,6 +39,13 @@ export default async function CheckoutPage() {
   });
   const cartItems = productsWithAmount.filter((obj) => obj.amount > 0);
 
+  let total = 0;
+
+  cartItems.forEach((item) => {
+    total += item.price * item.amount;
+    return total;
+  });
+
   return (
     <div className={styles.wholepage}>
       <h1>Cart</h1>
@@ -59,11 +67,16 @@ export default async function CheckoutPage() {
                 <p className={styles.p}>
                   Price: {((product.amount * product.price) / 100).toFixed(2)} €
                 </p>
+                <DeleteButton
+                  parsedData={cartCookieParsed}
+                  currentProduct={product}
+                />
               </div>
             </div>
           </div>
         );
       })}
+      <p>Total : {total / 100}</p>
       <Link href="/checkout">
         <button className={styles.button}>Go to Checkout</button>
       </Link>

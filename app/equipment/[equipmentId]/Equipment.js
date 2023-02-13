@@ -1,11 +1,13 @@
 'use client';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 import styles from './page.module.scss';
 
 export default function EquipmentPage(props) {
   const [count, setCount] = useState(1);
+  const router = useRouter();
   return (
     // HAUPTSEITE
     <div className={styles.outterdiv}>
@@ -88,6 +90,7 @@ export default function EquipmentPage(props) {
             // Update the cookie after transformation
             setStringifiedCookie('cart', productInCookies);
             setCount(1);
+            router.refresh();
           }}
         >
           Add to your cart

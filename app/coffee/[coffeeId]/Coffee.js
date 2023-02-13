@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 import styles from './page.module.scss';
@@ -8,6 +9,7 @@ export default function CoffeePage(props) {
   // const [isUpdating, setIsUpdating] = useState(true);
   const [count, setCount] = useState(1);
   const [isUpdated, setIsUpdated] = useState(true);
+  const router = useRouter();
   return (
     // HAUPTSEITE
 
@@ -57,8 +59,6 @@ export default function CoffeePage(props) {
             // get the cookie
             const productInCookies = getParsedCookie('cart');
 
-            console.log(productInCookies);
-
             // if there is no cookie we initialize the value with a count
             if (!productInCookies) {
               // create the cookie with a new object for the coffee
@@ -74,8 +74,6 @@ export default function CoffeePage(props) {
             }
 
             const foundCoffee = productInCookies.find((coffeeInCookie) => {
-              console.log('props', typeof props.coffee.id);
-              console.log('coffee', typeof coffeeInCookie.id);
               return coffeeInCookie.id === props.coffee.id;
             });
             console.log(foundCoffee);
@@ -96,6 +94,7 @@ export default function CoffeePage(props) {
             setStringifiedCookie('cart', productInCookies);
             setCount(1);
             setIsUpdated(!isUpdated);
+            router.refresh();
           }}
         >
           Add to your cart
