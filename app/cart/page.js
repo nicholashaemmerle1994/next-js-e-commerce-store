@@ -1,15 +1,13 @@
 import { getAllProducts } from '@/database/products';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
-// import styles from './page.module.scss';
+import Link from 'next/link';
 import styles from './page.module.scss';
 
-// export const metadata = {
-//   title: 'Cart',
-//   description: 'Here you find all your bikes',
-// };
-
-// const product = productInCookies[]
+export const metadata = {
+  title: 'Cart',
+  description: 'Here you find all your products you want to buy',
+};
 
 export default async function CheckoutPage() {
   const allProducts = await getAllProducts();
@@ -66,6 +64,9 @@ export default async function CheckoutPage() {
           </div>
         );
       })}
+      <Link href="/checkout">
+        <button className={styles.button}>Go to Checkout</button>
+      </Link>
     </div>
   );
 }

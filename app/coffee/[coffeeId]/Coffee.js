@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 import styles from './page.module.scss';
 

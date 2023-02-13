@@ -5,6 +5,11 @@ import React from 'react';
 // import { getEquipments } from '../../database/equipment';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Equipment',
+  description: 'This is the best Equipment you will find',
+};
+
 export default async function EquipmentPage() {
   const equipments = await getAllProductsEquipment();
 

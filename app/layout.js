@@ -4,6 +4,15 @@ import Link from 'next/link';
 import CookieBanner from './cookieBanner';
 import styles from './layout.module.scss';
 
+export const metadata = {
+  title: {
+    default: 'Coffix',
+  },
+  icons: {
+    shortcut: '/favicon.ico',
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -16,7 +25,8 @@ export default function RootLayout({ children }) {
             <Image src="/Coffix.png" alt="Brandlogo" width={150} height={100} />
           </Link>
           <nav>
-            <Link href="/">Home</Link>
+            {/* <Link href="/">Home</Link> */}
+            <Link href="/products">Products</Link>
             <Link href="/coffee" data-test-id="products-link">
               Coffee
             </Link>

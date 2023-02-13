@@ -1,4 +1,4 @@
-import { getAllProductsCoffee } from '@/database/products';
+import { getAllProducts } from '@/database/products';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -11,37 +11,36 @@ export const metadata = {
   description: 'This is my Animals page',
 };
 
-export default async function CoffeePage() {
-  const coffeeProducts = await getAllProductsCoffee();
+export default async function ProductPage() {
+  const allProducts = await getAllProducts();
 
   return (
     <>
-      <h1 className={styles.h1}>Coffee Beans</h1>
+      <h1 className={styles.h1}>All our Products</h1>
       <main className={styles.main}>
-        {coffeeProducts.map((coffee) => {
+        {allProducts.map((product) => {
           return (
-            <div key={coffee.id} className={styles.div}>
+            <div key={product.id} className={styles.div}>
               <Link
-                href={`/coffee/${coffee.id}`}
+                href={`/coffee/${product.id}`}
                 data-test-id="product-<product id>"
               >
                 <Image
-                  src={coffee.img}
-                  alt={coffee.name}
+                  src={product.img}
+                  alt={product.name}
                   width={250}
                   height={300}
                 />
               </Link>
               <Link
-                href={`/coffee/${coffee.id}`}
+                href={`/coffee/${product.id}`}
                 data-test-id="product-<product id>"
               >
-                <h3>{coffee.name}</h3>
+                <h3>{product.name}</h3>
               </Link>
-              <p>{coffee.shortDescription}</p>
+              <p>{product.shortDescription}</p>
 
-              <p>{(coffee.price / 100).toFixed(2)} €</p>
-              <p>{coffee.amount}</p>
+              <p>{(product.price / 100).toFixed(2)} €</p>
             </div>
           );
         })}
