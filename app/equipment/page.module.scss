@@ -16,11 +16,18 @@
 }
 
 .div {
+  border: 0.5px solid rgba(66, 40, 0, 1);
+  box-shadow: rgba(66, 40, 0, 1) 0px 5px 10px -5px,
+    rgba(0, 0, 0, 0.3) 0px 5px 10px -8px;
+  transition: all 0.5s;
+
   margin: 50px;
   border-radius: 10px;
   min-width: 317px;
+  padding-top: 10px;
   color: #422800;
   &:hover {
+    transition: all 0.5s;
     box-shadow: rgba(66, 40, 0, 1) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
@@ -33,4 +40,9 @@
   text-align: center;
   margin: 30px;
   color: #422800;
+}
+
+.img {
+  width: auto;
+  height: auto;
 }

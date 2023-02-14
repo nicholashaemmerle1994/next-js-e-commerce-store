@@ -6,6 +6,7 @@
 
 .wholeProduct {
   display: flex;
+  padding-bottom: 10px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -31,7 +32,9 @@
   margin: 0 30px 0 30px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .wholepage {
