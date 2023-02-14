@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Coffee Beans',
-  description: 'This is my Animals page',
+  description: 'This is my Coffee page',
 };
 
 export default async function CoffeePage() {
