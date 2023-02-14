@@ -2,11 +2,19 @@ import './global.scss';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { Amount } from './CartAmount';
 import CookieBanner from './cookieBanner';
 import styles from './layout.module.scss';
 
-export const metadata = {
+type MetaData = {
+  title: {
+    default: string;
+  };
+  icons: {
+    shortcut: string;
+  };
+};
+
+export const metadata: MetaData = {
   title: {
     default: 'Coffix',
   },
@@ -14,10 +22,20 @@ export const metadata = {
     shortcut: '/favicon.ico',
   },
 };
+type CartCookieParsed = {
+  id: number;
+  amount: number;
+}[];
 
-export default function RootLayout({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout(props: Props) {
   const cartCookie = cookies().get('cart');
-  const cartCookieParsed = cartCookie ? JSON.parse(cartCookie.value) : [];
+  const cartCookieParsed: CartCookieParsed = cartCookie
+    ? JSON.parse(cartCookie.value)
+    : [];
 
   return (
     <html lang="en">
@@ -47,7 +65,7 @@ export default function RootLayout({ children }) {
             </Link>
           </nav>
         </header>
-        {children}
+        {props.children}
         <footer className={styles.footer}>copyright by cooffix 2023©</footer>
       </body>
     </html>

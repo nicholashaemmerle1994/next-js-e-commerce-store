@@ -20,19 +20,19 @@ export default function CookieBanner() {
     setAreCookiesTermsAccepted(initialState);
   }, []);
 
-  return (
-    !areCookiesTermsAccepted && (
-      <div className={styles.div}>
-        <div>Hey Buddy. Please accept our terms and conditions</div>
-        <button
-          onClick={() => {
-            setAreCookiesTermsAccepted(true);
-            setLocalStorage('areCookiesTermsAccepted', true);
-          }}
-        >
-          Accept
-        </button>
-      </div>
-    )
+  return areCookiesTermsAccepted ? (
+    <div />
+  ) : (
+    <div className={styles.div}>
+      <div>Hey Buddy. Please accept our terms and conditions</div>
+      <button
+        onClick={() => {
+          setAreCookiesTermsAccepted(true);
+          setLocalStorage('areCookiesTermsAccepted', true);
+        }}
+      >
+        Accept
+      </button>
+    </div>
   );
 }

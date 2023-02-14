@@ -14,6 +14,7 @@ export const getAllProductsEquipment = cache(async () => {
 
 export const getAllProducts = cache(async () => {
   const products = await sql`SELECT * FROM products`;
+
   return products;
 });
 
@@ -21,5 +22,8 @@ export const getAllProducts = cache(async () => {
 
 export const getSingleProduct = cache(async (id) => {
   const coffee = await sql`SELECT * FROM products WHERE id = ${id}`;
+
+  if (!coffee.length) return undefined;
+
   return coffee[0];
 });

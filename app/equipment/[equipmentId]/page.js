@@ -5,7 +5,8 @@ import Equipment from './Equipment';
 
 export async function generateMetadata(props) {
   const singleProduct = await getSingleProduct(props.params.equipmentId);
-  if (!singleProduct) {
+
+  if (typeof singleProduct === 'undefined') {
     return rootNotFoundMetadata;
   }
 
@@ -19,7 +20,7 @@ export default async function EquipmentPage({ params }) {
   // console.log(params);
   const singleEquipment = await getSingleProduct(params.equipmentId);
 
-  if (!singleEquipment) {
+  if (typeof singleEquipment === 'undefined') {
     // throw new Error('this action is not allowed with Error id: 213123123');
     notFound();
   }

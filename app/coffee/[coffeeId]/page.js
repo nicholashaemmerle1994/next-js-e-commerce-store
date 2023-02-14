@@ -5,7 +5,7 @@ import Coffee from './Coffee';
 
 export async function generateMetadata(props) {
   const singleProduct = await getSingleProduct(props.params.coffeeId);
-  if (!singleProduct) {
+  if (typeof singleProduct === 'undefined') {
     return rootNotFoundMetadata;
   }
 
@@ -21,7 +21,7 @@ export const dynamic = 'force-dynamic';
 export default async function CoffeeProductPage({ params }) {
   const singleCoffee = await getSingleProduct(params.coffeeId);
 
-  if (!singleCoffee) {
+  if (typeof singleCoffee === 'undefined') {
     notFound();
   }
   return <Coffee coffee={singleCoffee} />;
