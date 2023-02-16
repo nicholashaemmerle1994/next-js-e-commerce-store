@@ -45,17 +45,24 @@ export default function RootLayout(props: Props) {
         <CookieBanner />
         <header className={styles.header}>
           <Link href="/">
-            <Image src="/Coffix.png" alt="Brandlogo" width={150} height={100} />
+            <Image
+              src="/Coffix.png"
+              alt="Brandlogo"
+              width={150}
+              height={100}
+              className={styles.img}
+            />
           </Link>
           <nav>
-            {/* <Link href="/">Home</Link> */}
-            <Link href="/products">Products</Link>
+            <Link href="/products" data-test-id="products-link">
+              Products
+            </Link>
             <Link href="/coffee" data-test-id="products-link">
               Coffee
             </Link>
             <Link href="/equipment">Equipment</Link>
             <Link href="/cart" className={styles.cart}>
-              Cart
+              <Image src="/cart.png" alt="Cart" width={25} height={25} />
               <div>
                 {cartCookieParsed.reduce(
                   (previousValue, { amount }) => previousValue + amount,

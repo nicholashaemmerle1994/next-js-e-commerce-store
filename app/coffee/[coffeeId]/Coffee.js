@@ -25,10 +25,12 @@ export default function CoffeePage(props) {
       <div className={styles.innerdiv}>
         <h1>{props.coffee.name}</h1>
         <p className={styles.longDescription}>{props.coffee.longDescription}</p>
-        <p>Price: {(props.coffee.price / 100).toFixed(2)} €</p>
+        <p data-test-id="product-price">
+          Price: {(props.coffee.price / 100).toFixed(2)} €
+        </p>
         <div className={styles.buttonDiv}>
           <div>
-            <input readOnly value={count} />
+            <input readOnly value={count} data-test-id="product-quantity" />
             {/* Minus Button */}
             <button
               onClick={() => {
@@ -54,6 +56,7 @@ export default function CoffeePage(props) {
         </div>
         {/* Submit BUtton */}
         <button
+          data-test-id="product-add-to-cart"
           className={styles.button}
           onClick={() => {
             // get the cookie
@@ -70,13 +73,13 @@ export default function CoffeePage(props) {
               ]);
               // if there is no cookie function stop here
               setCount(1);
+              router.refresh();
               return;
             }
 
             const foundCoffee = productInCookies.find((coffeeInCookie) => {
               return coffeeInCookie.id === props.coffee.id;
             });
-            console.log(foundCoffee);
             // my coffee is inside of the cookie
             if (foundCoffee) {
               // update the amount of the foundcoffee

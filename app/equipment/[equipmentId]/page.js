@@ -17,7 +17,6 @@ export async function generateMetadata(props) {
 }
 
 export default async function EquipmentPage({ params }) {
-  // console.log(params);
   const singleEquipment = await getSingleProduct(params.equipmentId);
 
   if (typeof singleEquipment === 'undefined') {

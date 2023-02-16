@@ -25,12 +25,12 @@ export default async function CheckoutPage() {
   const productsWithAmount = allProducts.map((product) => {
     const productWithAmount = { ...product, amount: 0 };
 
-    // i read the cookie and find the fruit
+    // read the cookie and find the product
     const productInCookies = cartCookieParsed.find(
       (productObject) => product.id === productObject.id,
     );
 
-    // if find the fruit i update the amount of stars
+    // if find the product i update the amount
     if (productInCookies) {
       productWithAmount.amount = productInCookies.amount;
     }
@@ -51,7 +51,7 @@ export default async function CheckoutPage() {
       <h1>Cart</h1>
       {cartItems.map((product) => {
         return (
-          <div key={product.id}>
+          <div key={product.id} data-test-id={`cart-product-${product.id}`}>
             <div className={styles.wholeProduct}>
               <div className={styles.divImg}>
                 <p>{product.name}</p>
@@ -63,7 +63,12 @@ export default async function CheckoutPage() {
                 />
               </div>
               <div className={styles.textDiv}>
-                <p className={styles.p}>Quantity: {product.amount}</p>
+                <p
+                  className={styles.p}
+                  data-test-id={`cart-product-quantity-${product.amount}`}
+                >
+                  Quantity: {product.amount}
+                </p>
                 <p className={styles.p}>
                   Price: {((product.amount * product.price) / 100).toFixed(2)} €
                 </p>
@@ -76,7 +81,7 @@ export default async function CheckoutPage() {
           </div>
         );
       })}
-      <p>Total : {total / 100}</p>
+      <p>Total: {total}</p>
       <Link href="/checkout">
         <button className={styles.button}>Go to Checkout</button>
       </Link>
