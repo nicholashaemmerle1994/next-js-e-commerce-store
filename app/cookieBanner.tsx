@@ -24,7 +24,7 @@ export default function CookieBanner() {
     <div />
   ) : (
     <div className={styles.div}>
-      <div>Hey Buddy. Please accept our terms and conditions</div>
+      <div>Hey Buddy. Please accept our terms and conditions :D</div>
       <button
         onClick={() => {
           setAreCookiesTermsAccepted(true);

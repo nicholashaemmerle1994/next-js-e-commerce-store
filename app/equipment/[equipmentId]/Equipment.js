@@ -67,6 +67,7 @@ export default function EquipmentPage(props) {
               ]);
               // if there is no cookie function stop here
               setCount(1);
+              router.refresh();
               return;
             }
 
