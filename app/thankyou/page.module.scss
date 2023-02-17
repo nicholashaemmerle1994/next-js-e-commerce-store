@@ -1,11 +1,19 @@
 .div {
   text-align: center;
-  background-color: #c3fcf2;
+  background-color: #f6f6f8;
   justify-content: center;
   text-align: center;
   align-self: center;
-  padding: 37.5px 0px 60vh 0px;
+  padding: 10px 0px 0px 0px;
   & h1 {
     margin: 0;
+  }
+  @media (max-width: 463px) {
+    padding: 37.5px 0px 20vh 0px;
+
+    & .image {
+      width: auto;
+      height: auto;
+    }
   }
 }
