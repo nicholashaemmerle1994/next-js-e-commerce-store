@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import { rootNotFoundMetadata } from '../../not-found';
 import Equipment from './Equipment';
 
+// we add this only if we have no dynamic function as cookies or headers
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(props) {
   const singleProduct = await getSingleProduct(props.params.equipmentId);
 

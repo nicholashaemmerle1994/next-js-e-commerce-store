@@ -5,6 +5,8 @@ import Link from 'next/link';
 import CookieBanner from './cookieBanner';
 import styles from './layout.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 type MetaData = {
   title: {
     default: string;

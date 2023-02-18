@@ -1,5 +1,7 @@
 import styles from './layout.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   return (
     <div className={styles.div}>

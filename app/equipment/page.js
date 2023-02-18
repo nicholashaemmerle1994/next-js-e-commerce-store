@@ -2,8 +2,9 @@ import { getAllProductsEquipment } from '@/database/products';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-// import { getEquipments } from '../../database/equipment';
 import styles from './page.module.scss';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Equipment',
