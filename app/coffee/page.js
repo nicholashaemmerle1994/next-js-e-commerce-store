@@ -23,7 +23,7 @@ export default async function CoffeePage() {
             <div key={coffee.id} className={styles.div}>
               <Link
                 href={`/coffee/${coffee.id}`}
-                data-test-id="product-<product id>"
+                data-test-id={`product-${coffee.id}`}
               >
                 <Image
                   src={coffee.img}
@@ -34,7 +34,7 @@ export default async function CoffeePage() {
               </Link>
               <Link
                 href={`/coffee/${coffee.id}`}
-                data-test-id="product-<product id>"
+                data-test-id={`product-${coffee.id}`}
               >
                 <h3>{coffee.name}</h3>
               </Link>

@@ -57,9 +57,7 @@ export default function RootLayout(props: Props) {
             <Link href="/products" data-test-id="products-link">
               Products
             </Link>
-            <Link href="/coffee" data-test-id="products-link">
-              Coffee
-            </Link>
+            <Link href="/coffee">Coffee</Link>
             <Link href="/equipment">Equipment</Link>
             <Link href="/cart" className={styles.cart}>
               <Image src="/cart.png" alt="Cart" width={25} height={25} />

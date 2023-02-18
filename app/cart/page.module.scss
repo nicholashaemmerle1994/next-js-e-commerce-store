@@ -19,8 +19,10 @@
   box-shadow: rgba(66, 40, 0, 1) 0px 5px 10px -5px,
     rgba(0, 0, 0, 0.3) 0px 5px 10px -8px;
   @media (max-width: 920px) {
+    margin: 0px 0px;
+    border: 0px;
     min-width: 10px;
-    max-width: 560px;
+    max-width: 340px;
   }
 }
 

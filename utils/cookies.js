@@ -23,3 +23,7 @@ export function setStringifiedCookie(key, value) {
 export function deleteCookie(key) {
   Cookies.remove(key);
 }
+
+export function readStringifyCookie(value) {
+  return JSON.stringify(value);
+}

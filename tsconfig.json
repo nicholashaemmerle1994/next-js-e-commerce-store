@@ -33,8 +33,7 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts",
-    "next-env.d.ts",
-    "database/Products"
+    "next-env.d.ts"
   ],
   "exclude": ["node_modules"]
 }
