@@ -4,6 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Equipment',
   description: 'This is the best Equipment you will find',

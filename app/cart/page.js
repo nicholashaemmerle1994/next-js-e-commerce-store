@@ -5,6 +5,8 @@ import Link from 'next/link';
 import DeleteButton from './DeleteButton';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Cart',
   description: 'Here you find all your products you want to buy',
