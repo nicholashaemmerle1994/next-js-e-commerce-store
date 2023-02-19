@@ -3,11 +3,6 @@ import { notFound } from 'next/navigation';
 import { rootNotFoundMetadata } from '../../not-found';
 import Coffee from './Coffee';
 
-<<<<<<< HEAD
-// // we add this only if we have no dynamic function as cookies or headers
-=======
-// we add this only if we have no dynamic function as cookies or headers
->>>>>>> refs/remotes/origin/main
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(props) {

@@ -12,8 +12,6 @@ export const metadata = {
   description: 'Here you find all your products you want to buy',
 };
 
-export const dynamic = 'force-dynamic';
-
 export default async function CheckoutPage() {
   const allProducts = await getAllProducts();
   // get the cookie from the server

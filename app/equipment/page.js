@@ -11,8 +11,6 @@ export const metadata = {
   description: 'This is the best Equipment you will find',
 };
 
-export const dynamic = 'force-dynamic';
-
 export default async function EquipmentPage() {
   const equipments = await getAllProductsEquipment();
 
