@@ -20,7 +20,7 @@ export default async function CoffeePage() {
       <main className={styles.main}>
         {coffeeProducts.map((coffee) => {
           return (
-            <div key={coffee.id} className={styles.div}>
+            <div key={`coffee-${coffee.id}`} className={styles.div}>
               <Link
                 href={`/coffee/${coffee.id}`}
                 data-test-id={`product-${coffee.id}`}

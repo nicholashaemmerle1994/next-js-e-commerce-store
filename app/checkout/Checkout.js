@@ -1,5 +1,3 @@
-// import Total from '../cart/total';
-// import Button from './Button';
 import { getAllProducts } from '@/database/products';
 import { cookies } from 'next/headers';
 import Form from './Form';

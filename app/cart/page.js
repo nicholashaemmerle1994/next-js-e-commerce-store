@@ -10,6 +10,8 @@ export const metadata = {
   description: 'Here you find all your products you want to buy',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function CheckoutPage() {
   const allProducts = await getAllProducts();
   // get the cookie from the server
@@ -51,7 +53,10 @@ export default async function CheckoutPage() {
       <h1>Cart</h1>
       {cartItems.map((product) => {
         return (
-          <div key={product.id} data-test-id={`cart-product-${product.id}`}>
+          <div
+            key={`product-${product.id}`}
+            data-test-id={`cart-product-${product.id}`}
+          >
             <div className={styles.wholeProduct}>
               <div className={styles.divImg}>
                 <p>{product.name}</p>

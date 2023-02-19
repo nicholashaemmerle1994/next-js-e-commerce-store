@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Thank you for your order',
   description: 'Thank you page for oyur order. ',

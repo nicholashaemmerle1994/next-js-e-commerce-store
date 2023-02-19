@@ -20,7 +20,7 @@ export default async function ProductPage() {
       <main className={styles.main}>
         {allProducts.map((product) => {
           return (
-            <div key={product.id} className={styles.div}>
+            <div key={`product-${product.id}`} className={styles.div}>
               <Link
                 className={styles.img}
                 href={`/coffee/${product.id}`}
