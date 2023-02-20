@@ -27,3 +27,27 @@ export function deleteCookie(key) {
 export function readStringifyCookie(value) {
   return JSON.stringify(value);
 }
+
+export function setOrAddToCookie(key, value) {
+  const productInCookies = getParsedCookie(key);
+
+  if (!productInCookies) {
+    setStringifiedCookie(key, [{ id: value.id, amount: value.amount }]);
+    return;
+  }
+
+  const foundCoffee = productInCookies.find((coffeeInCookie) => {
+    return coffeeInCookie.id === value.id;
+  });
+
+  if (foundCoffee) {
+    foundCoffee.amount += value.amount;
+  } else {
+    productInCookies.push({
+      id: value.id,
+      amount: value.amount,
+    });
+  }
+
+  setStringifiedCookie(key, productInCookies);
+}
