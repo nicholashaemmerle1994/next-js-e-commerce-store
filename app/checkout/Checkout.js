@@ -45,7 +45,7 @@ export default async function Checkout() {
     <div className={styles.wholediv}>
       <h1>Checkout</h1>
       <div className={styles.div}>
-        <Form total={total.toFixed(2)} />
+        <Form total={(total / 100).toFixed(2)} />
       </div>
     </div>
   );
