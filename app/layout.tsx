@@ -10,6 +10,7 @@ export const dynamic = 'force-dynamic';
 type MetaData = {
   title: {
     default: string;
+    template: string;
   };
   icons: {
     shortcut: string;
@@ -19,6 +20,7 @@ type MetaData = {
 export const metadata: MetaData = {
   title: {
     default: 'Coffix',
+    template: '%s | Coffix, we the best coffee',
   },
   icons: {
     shortcut: '/favicon.ico',
