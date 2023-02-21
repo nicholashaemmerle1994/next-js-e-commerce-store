@@ -21,9 +21,9 @@ test('Add to cart, change quantity and remove from cart', async ({ page }) => {
     page.getByRole('heading', { name: 'All our Products' }),
   ).toBeVisible();
   // Navigate to the specific coffee page
-  await page.getByTestId('product-1').click();
+  await page.getByTestId('product-2').first().click();
   //  Checking if i am on the right page
-  await expect(page).toHaveURL('http://localhost:3000/coffee/1');
+  await expect(page).toHaveURL('http://localhost:3000/coffee/2');
   // Adding up products that i want to buy
   await page.getByRole('button', { name: '+' }).dblclick();
   // Adding the product to the cart
@@ -47,7 +47,7 @@ test('Add to cart, change quantity and remove from cart', async ({ page }) => {
   // Navigate to the products page
   await page.getByRole('link', { name: 'Products' }).click();
   // Navigate to the specific coffee page
-  await page.getByTestId('product-3').click();
+  await page.getByTestId('product-3').first().click();
   // Adding the product to the cart
   await page.getByTestId('product-add-to-cart').click();
   // Checking if the cart is visible and if the number of products is correct
