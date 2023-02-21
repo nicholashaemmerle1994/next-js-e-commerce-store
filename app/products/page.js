@@ -35,13 +35,13 @@ export default async function ProductPage() {
               </Link>
               <Link
                 href={`/coffee/${product.id}`}
-                data-test-id="product-<product id>"
+                data-test-id={`product-${product.id}`}
               >
                 <h3>{product.name}</h3>
               </Link>
               <p>{product.shortDescription}</p>
 
-              <p>{(product.price / 100).toFixed(2)} €</p>
+              <p>{(product.price / 100).toFixed(2)}</p>
             </div>
           );
         })}

@@ -40,7 +40,7 @@ export default async function CoffeePage() {
               </Link>
               <p>{coffee.shortDescription}</p>
 
-              <p>{(coffee.price / 100).toFixed(2)} €</p>
+              <p>{(coffee.price / 100).toFixed(2)}</p>
               <p>{coffee.amount}</p>
             </div>
           );

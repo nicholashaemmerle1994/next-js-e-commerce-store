@@ -26,7 +26,7 @@ export default function CoffeePage(props) {
         <h1>{props.coffee.name}</h1>
         <p className={styles.longDescription}>{props.coffee.longDescription}</p>
         <p data-test-id="product-price">
-          Price: {(props.coffee.price / 100).toFixed(2)} €
+          Price: {(props.coffee.price / 100).toFixed(2)}
         </p>
         <div className={styles.buttonDiv}>
           <div>

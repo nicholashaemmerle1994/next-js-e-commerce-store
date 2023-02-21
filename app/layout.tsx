@@ -63,7 +63,7 @@ export default function RootLayout(props: Props) {
             </Link>
             <Link href="/coffee">Coffee</Link>
             <Link href="/equipment">Equipment</Link>
-            <Link href="/cart" className={styles.cart}>
+            <Link href="/cart" className={styles.cart} data-test-id="cart-link">
               <Image src="/cart.png" alt="Cart" width={25} height={25} />
               <div>
                 {cartCookieParsed.reduce(
