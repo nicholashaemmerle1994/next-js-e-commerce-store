@@ -86,7 +86,7 @@ export default async function CheckoutPage() {
           </div>
         );
       })}
-      <p>Total: {total}</p>
+      <p>Total: {total.toFixed(2)}</p>
       <Link href="/checkout">
         <button className={styles.button}>Go to Checkout</button>
       </Link>
