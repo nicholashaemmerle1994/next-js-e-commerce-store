@@ -2,6 +2,11 @@ import styles from './layout.module.scss';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+  title: 'Coffix',
+  description: 'Coffix, we the best coffee',
+};
+
 export default function HomePage() {
   return (
     <div className={styles.div}>
