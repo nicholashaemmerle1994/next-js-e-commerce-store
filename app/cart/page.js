@@ -75,7 +75,7 @@ export default async function CheckoutPage() {
                   Quantity: {product.amount}
                 </p>
                 <p className={styles.p}>
-                  Price: {((product.amount * product.price) / 100).toFixed(2)} €
+                  Price: {((product.amount * product.price) / 100).toFixed(2)}
                 </p>
                 <DeleteButton
                   parsedData={cartCookieParsed}
