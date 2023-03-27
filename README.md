@@ -1,38 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Coffix
 
-## Getting Started
+Coffix is an e-commerce store built using Next.js, TypeScript, and JavaScript. The site sells high-quality Italian coffee beans. For styling, we used SCSS, while Playwright was used for end-to-end tests and Jest for unit tests. The webstore was deployed on fly.io, as you can see in the provided link.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js
+- PostgreSQL
+- Playwright
+- SCSS
+- Jest
+
+### Languages:
+
+- JavaScript
+- JSX
+- TypeScript
+- TSX
+
+## Screenshots:
+
+## Setup instructions!
+
+1. Clone the project on your local machine (run each line individually):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone <url>
+cd <repo name>
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Connect to default database as admin:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- On Windows
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+psql -U postgres
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- On macOS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+psql postgres
+```
 
-## Learn More
+- On Linux
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+sudo -u postgres psql
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Set up the database:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+CREATE DATABASE <database name>;
+CREATE USER <user name> WITH ENCRYPTED PASSWORD <user password>;
+GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
+```
 
-## Deploy on Vercel
+4. After queries are successfully ran, quit `psql` and connect to the database
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+\q
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- On Windows & macOS
+
+```bash
+psql -U <user name> <database name>
+```
+
+- On Linux
+
+```bash
+sudo -u <user name> psql -U <user name> <database name>
+```
+
+5. In the repository's directory, run migrations using ley:
+
+```bash
+yarn migrate up
+```
+
+6. Create a .env file:
+
+- Open the project in your code editor
+- Copy the content of the .env.example file into the .env file
+- Replace xxxxxxxx with the access information
+- add .env file to .gitignore
+
+7. (Optional) Start deployment server:
+
+```bash
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
