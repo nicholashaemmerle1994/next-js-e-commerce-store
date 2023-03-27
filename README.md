@@ -25,7 +25,7 @@ Coffix is an e-commerce store built using Next.js, TypeScript, and JavaScript. T
 
 <img src='/public/singleproductscreen.png' width='700' alt='single product'>
 
-<img src='/public/cartscreen.png width='700' alt='cart page'>
+<img src='/public/cartscreen.png' width='700' alt='cart'>
 
 <img src='/public/thankyouscreen.png' width='700' alt='thank you page'>
 
